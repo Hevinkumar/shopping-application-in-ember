@@ -1,0 +1,28 @@
+{{outlet}}
+
+<CartContainer>
+    {{!-- {{log this.modelC thi
+    s.id this.product }} --}}
+    <div class="item-display">
+        <div class="image-details">
+        {{!-- <div class="image-details-page {{if this.isZoomed  'is-zoomed'}}"> --}}
+            <Image @prod={{this.model.item}} @toggleZoom={{action "toggleZoom" }} />
+            <Details @prod={{this.model.item}} @onChangeColor={{action "onChangeColor" }}
+                @addCartDisplay={{addCartDisplay}} />
+        {{!-- </div> --}}
+        </div>
+        
+        <div class="div-feature">
+            <h5 class="features">Features</h5>
+            <ul>
+                {{#each this.model.item.features as |item|}}
+                <li>{{item}}</li>
+                {{/each}}
+
+            </ul>
+        </div>
+
+
+    </div>
+
+</CartContainer>

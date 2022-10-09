@@ -1,0 +1,59 @@
+{{outlet}}
+<main class="cart-container">
+    <h1>Shopping Cart</h1>
+    <h4 class="breadcramb">
+        <span>
+            {{#link-to "index" class="breadcrumb-item" style="color: blue;"}}Home{{/link-to}}
+        </span>
+        <span class="breadcrumb-item">/ Shopping Cart</span>
+    </h4>
+    {{!-- {{log items.cartItems "cart hbs"}} --}}
+    <table class="table">
+        {{log items "items in cart hbs"}}
+        {{#each items as |item|}}
+        <tr class="table-row">
+            <td class="table-data"><img src="{{item.image}}" style="width:200px;height:150px" alt="{{item.id}}"></td>
+            <td class="table-data">
+                <h4>{{item.name}}</h4>
+            </td>
+            <td class="table-data">
+                <div>
+                    <del class="text-black">₹ {{item.priceOriginal}}</del>
+                    <i class="text">₹ {{item.priceCurrent}}</i>
+                </div>
+            </td>
+            <td class="table-data"><input type="number" value={{item.count}} min="0" onchange={{action "addItemsCounts" item}}>
+            </td>
+            <td class="table-data"><a type="button" class="remove-btn" onclick={{action "removeItem" item}}>&times;</a>
+            </td>
+
+        </tr>
+        {{/each}}
+    </table>
+    <hr>
+    <div class="bill-container">
+        <table>
+        <tr>
+            <th>Subtotal:</th>
+            <td>₹ {{this.subtotal}}</td>
+        </tr>
+        <tr>
+            <th>Tax:</th>
+            <td>₹ {{this.tax}}</td>
+        </tr>
+        <tr >
+            <th><span class="total">Total:</span></th>
+            <td><span class="total">₹ {{this.total}}</span></td>
+        </tr>
+        <tr>
+            <th rowspan="2"></th>
+            <td><span><input type="button" class="input" value="Check Out" onclick={{action "checkOut"}}></span></td>
+        </tr>
+    </table>
+
+    </div>
+    
+
+
+</main>
+{{log this.userAuth.isAuthenticated}};

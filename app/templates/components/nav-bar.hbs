@@ -1,0 +1,28 @@
+<div class="div-navbar">
+    <div class="brand-title">E-Commerse</div>
+    <a href="" class="toggle-button" onclick={{action "toggleButton" }}>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <div class="{{this.navlinks}}">
+        <ul>
+            <li>{{link-to "Home" "index"}}</li>
+            <li>{{link-to "About" "about_page"}}</li>
+            <li>{{link-to "Contact" "contact_page"}}</li>
+            {{#if checkcookie.auth}}
+            {{!-- {{log checkcookie.auth "auth nacv-bar"}} --}}
+            <span><i type="button" class="uil uil-user-circle" onclick={{action "logout"}}></i></span>
+            {{else}}
+
+            {{#if userAuth.isAuthenticated}}
+            <span><i type="button" class="uil uil-user-circle" onclick={{action "logout"}}></i></span>
+            {{else}}
+            <li>{{link-to "Login" "login_page"}}</li>
+            {{/if}}
+            {{/if}}
+        </ul>
+    </div>
+    {{!-- </nav> --}}
+</div>
+{{yield}}

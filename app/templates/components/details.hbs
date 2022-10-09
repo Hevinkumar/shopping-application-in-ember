@@ -1,0 +1,51 @@
+<div class="product-details">
+    <section>
+        <h3>{{this.details.name}}</h3>
+        <div class="text-warning">
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star-half-o star"></i>
+        </div>
+    </section>
+    <section>
+        {{!-- {{log this.details.price.original "details"}} --}}
+        <del class="text-black">{{currency this.details.priceOriginal}}</del>
+        <i class="text">{{currency this.details.priceCurrent}}</i>
+    </section>
+    <section>
+        <h5>Description</h5>
+        <p>{{this.details.description}}</p>
+    </section>
+    {{#if @addCartDisplay}}
+    <section>
+        <a type="button" class="cart-add-button" onclick={{action "addToCart" }}><i
+                class="fa fa-shopping-cart cart-add-icon"></i> Add to cart</a>
+    </section>
+    {{!-- {{log this.cart "cart class"}} --}}
+    {{/if}}
+    {{#if this.details.offer}}
+    <div class="offericon"><span class="fa-stack fa-lg offer">
+            <i class="fa fa-certificate fa-stack-2x"></i>
+            <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
+        </span>
+        <span>  Offer deal </span>
+    </div>
+    {{/if}}
+
+
+    {{#if @isColorChange}}
+    <div>
+        <h5>Color</h5>
+        {{!-- <br /> --}}
+        <div class="product-colors active-{{this.productDetails.color}}">
+            <span class="product-color color-red" onclick={{action "changeColor" "red" }}></span>
+            <span class="product-color color-black" onclick={{action "changeColor" "black" }}></span>
+        </div>
+
+    </div>
+
+    {{/if}}
+
+</div>

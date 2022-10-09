@@ -1,0 +1,41 @@
+{{!--
+<NavBar /> --}}
+<CartContainer>
+  {{#list-filter
+  filter=(action 'filterByName') productFilter=(action 'productFilter') model=model islooping=islooping
+  as |filteredResults filterProductList |}}
+  {{#if filteredResults}}
+  <ul class="offer-results">
+    {{#each filteredResults as |product|}}
+    <Product @product={{product}} @index={{product.id}} />
+    {{/each}}
+  </ul>
+  {{/if}}
+  <div class="products-list">
+    {{#if filterProductList}}
+    {{#each filterProductList as |product|}}
+    <Product @product={{product}} @index={{product.id}} />
+    {{/each}}
+    {{else}}
+    {{#each model.data as |product|}}
+    <Product @product={{product}} @index={{product.id}} />
+    {{/each}}
+    {{/if}}
+
+
+  </div>
+  {{/list-filter}}
+
+
+
+  {{!-- {{#each model.data as |product|}}
+  <Product @product={{product}} @index={{product.id}} />
+  {{/each}} --}}
+
+
+
+  {{!-- {{#each templist as |product index|}}
+  <Product @product={{product}} @index={{index}} />
+  {{/each}} --}}
+  {{outlet}}
+</CartContainer>

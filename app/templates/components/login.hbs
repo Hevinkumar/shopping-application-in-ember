@@ -1,0 +1,57 @@
+{{!-- {{yield}}
+ --}}
+ <div class="login">
+    <div class="container">
+        <div class="forms">
+        <div class="form input">
+                <span class="header">Login</span>
+                <form target="_self"  enctype="multipart/form-data" >
+                {{!-- <form onsubmit={{action "onsubmit"}} target="_self"  enctype="multipart/form-data" > --}}
+                    
+                    <div class="input-group">
+                            <!-- <label username="email" class="label">Email:</label> -->
+                        <input type="email" class="name" id="name" name="email"placeholder="Enter Your Email" required onchange={{action "onchange"}} value={{this.login.email}}>
+                        <i class="uil uil-envelope icon"></i>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="{{this.icon}}" class="" id="name" name="password" placeholder="Enter Your Mobile number" required onchange={{action "onchange"}} value={{this.login.password}}>
+                        <i class="uil uil-lock icon"></i>
+                        {{#if iconView}}
+                            <i class="uil uil-eye-slash showHidePw" onclick={{action "iconChange"}}></i>
+                        {{else}}
+                        <i class="uil uil-eye showHidePw" onclick={{action "iconChange"}}></i>
+                        {{/if}}
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="captcha">
+                        <div class="preview">
+                            <label for="captcha-label"> Enter captcha </label>
+                            <div class="preview-captcha" id="preview-captcha"></div>
+                            <i type="button" onclick={{action "create_captcha"}} class="uil uil-refresh refresh"></i>
+                        </div>
+                        <div class="captcha-form ">
+                            <input username="captcha" id="captcha" name="captcha" type="text"onchange={{action "onchange"}} value={{this.login.captcha}}>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="check-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="checkbox" name="checkbox">
+                            <label for="checkbox" class="text">Remember me</label>
+                        </div>
+                        <a href="#" class="text">Forgot password</a>
+                    </div>
+                    <div class="input-group button">
+                        <input type="button" class="inputSubmit" value="Login now" onclick={{action "onsubmit"}}>
+                    </div>
+                </form>
+                <div class="sign-up">
+                    <span>You don't have any account? {{link-to "Signup here" "signup_page" class="text"}}</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+ </div>

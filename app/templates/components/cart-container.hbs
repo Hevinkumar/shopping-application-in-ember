@@ -1,0 +1,14 @@
+{{outlet}}
+{{!-- {{log this.cart}} --}}
+{{#link-to "cart"}}
+<i class="uil uil-shopping-cart item-cart">
+    {{#if cart.itemCount }}
+    <span>{{cart.itemCount}}</span>
+    {{/if}}
+</i>
+{{/link-to}}
+<main class="container-cart">
+    
+    {{yield}}
+</main>
+

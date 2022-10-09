@@ -1,0 +1,121 @@
+.item-cart{
+    position: fixed;
+    right:10px;
+    top: 60px;
+    background-color: rgb(247, 244, 244);
+    color-interpolation-filters: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:65px;
+    height: 65px;
+    font-size: 35px;
+    border-radius: 50%;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.4);
+    text-decoration: none !important;
+}
+.item-cart:hover{
+    color:blue;
+}
+.item-cart span{
+    position: absolute;
+    background-color: red;
+    font-size: 14px !important;
+    color: white !important;
+    /* padding-bottom: 15px; */
+    text-decoration: none;
+    font-style:normal !important;
+    border-radius: 50%;
+    text-align: center;
+    top:10px;
+    right:10px;
+    height: 20px;
+    width: 20px;
+
+}
+
+
+
+
+
+/* cart page contaier design */
+
+.cart-container{
+    height: 100%;
+    display: block;
+    margin: 84px 100px;
+    
+    background-color: rgb(247, 244, 244);
+    border-radius: 15px;
+}
+.cart-container .table{
+    width: 100%;
+    text-align: center;
+
+
+}
+.cart-container table tr{
+    width: 100%;
+
+}
+.cart-container table tr td{
+    text-align: center;
+    padding: 5px;
+}
+.cart-container table tr td del{
+    text-decoration: line-through !important;
+}
+.cart-container table tr td input{
+    width: 50px;
+    height:40px;
+    text-align: center;
+    font-weight: 700;
+}
+.cart-container table tr td a{
+    text-align: center;
+    font-weight: 700;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 7px;
+   }
+.cart-container .bill-container{
+    box-sizing: border-box;
+    background-color: aliceblue;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.bill-container table{
+ width: 100%;
+ /* background-color: azure; */
+}
+.bill-container table tr{
+    text-align: right;
+    width: 70%;
+    font-size: 20px;
+    /* background-color:aqua; */
+}
+.cart-container table td{
+    font-size: 15px;
+    font-weight: 700;
+}
+.cart-container table tr th.total{
+    color:rgb(255, 0, 0);
+
+}
+.cart-container table td input.input{
+    width: 120px;
+    height:30px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    margin-top: 5px;
+    padding: 5px;
+    border: 0 solid green;
+    cursor: pointer;
+
+}
+
+

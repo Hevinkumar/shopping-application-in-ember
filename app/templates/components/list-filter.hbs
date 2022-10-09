@@ -1,0 +1,30 @@
+<div class="offer-filtering">
+  <div class="searchbar">
+
+    <form>
+      {{input value=value
+      key-up=(action 'handleFilterEntry')
+      class="light"
+      placeholder="Filter By Name"}}
+      <select name="cars" id="cars" class="select" onchange={{action "handleProductFilter" }}>
+        <option >Filter by</option>
+        <option value="pricelow">price low</option>
+        <option value="pricehigh">price high</option>
+        <option value="speed">speed</option>
+      </select>
+    </form>
+
+  </div>
+
+  {{#if this.results}}
+
+ <div class="offericon"><span class="fa-stack fa-lg offer">
+  <i class="fa fa-certificate fa-stack-2x"></i>
+  <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
+</span>
+<span>Best deals </span>
+</div>
+{{/if}}
+  {{yield results filterProduct}}
+
+</div>
