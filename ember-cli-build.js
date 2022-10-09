@@ -10,13 +10,13 @@ module.exports = function(defaults) {
     sassOptions: {
       implementation: nodeSass,
     },
-    outputPaths: {
-      app: {
-        css: {
-          'stylesheet': '/assets/stylesheet.css'
-        }
-      }
-    }
+//     outputPaths: {
+//       app: {
+//         css: {
+//           'stylesheet': '/assets/stylesheet.css'
+//         }
+//       }
+//     }
   });
 
   // Use `app.import` to add additional libraries to the generated
